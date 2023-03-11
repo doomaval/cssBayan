@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+.elem-img img {
+  /* width: 50%; */
+  height: 25vh;
+}
+
+.elem-title,
+.elem-cross {
+  display: inline-block;
+}
