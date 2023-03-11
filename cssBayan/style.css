@@ -7,6 +7,10 @@ html {
   font-size: 100%;
 }
 
+input {
+  /* appearance: none; */
+}
+
 .elem-img img {
   /* width: 50%; */
   height: 25vh;
