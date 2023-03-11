@@ -1,14 +1,42 @@
 * {
   margin: 0;
   font-family: sans-serif;
+  color: black;
 }
 
 html {
   font-size: 100%;
 }
 
+.wrapper {
+  width: 80vw;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+label {
+  display: block;
+  border-top: 1px solid grey;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
 input {
-  /* appearance: none; */
+  appearance: none;
+  display: none;
+}
+
+.elem-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.elem-img {
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .elem-img img {
@@ -18,5 +46,29 @@ input {
 
 .elem-title,
 .elem-cross {
+  font-weight: bold;
+  color: blue;
+}
+
+input:checked ~ .elem-inner .elem-title,
+input:checked ~ .elem-inner .elem-cross {
+  color: black;
+}
+
+input:checked ~ .elem-inner .elem-cross {
+  transform: rotate(45deg);
+}
+
+.elem-title,
+.elem-cross {
   display: inline-block;
+}
+
+input:not(input:checked) ~ .elem-img {
+  display: none;
+}
+@media (hover: hover) {
+  input ~ .elem-inner .elem-cross {
+    display: none;
+  }
 }
