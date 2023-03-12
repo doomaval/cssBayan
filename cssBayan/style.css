@@ -42,7 +42,7 @@ input {
 }
 
 .elem-img img {
-  /* width: 50%; */
+  width: 50%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -82,7 +82,7 @@ input:not(input:checked) ~ .elem-img img {
   /* height: 0; */
 }
 input:not(input:checked) + label .elem-img img {
-  height: 0;
+  width: 0;
 }
 
 @media (min-width: 700px) {
@@ -123,7 +123,11 @@ input:not(input:checked) + label .elem-img img {
     cursor: pointer;
   }
   .elem:hover .elem-img img {
-    height: 50vh;
-    transition: 1s;
+    width: 50%;
+    transition: 0.5s;
+  }
+  .elem:hover .elem-cross {
+    transform: rotate(45deg);
+    transition: 0.3s;
   }
 }
