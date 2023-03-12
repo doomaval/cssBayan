@@ -52,8 +52,8 @@ input {
 
 .elem-cross img {
   height: 1rem;
-  /* transform: rotate(0deg);
-  transition: 0.3s; */
+  transform: rotate(45deg);
+  transition: 0.3s;
 }
 
 .elem-title {
@@ -67,7 +67,7 @@ input:checked ~ .elem-inner .elem-title {
 }
 
 input:checked ~ .elem-inner .elem-cross img {
-  transform: rotate(45deg);
+  transform: rotate(90deg);
   transition: 0.3s;
 }
 
@@ -80,6 +80,9 @@ input:not(input:checked) ~ .elem-img img {
   /* display: none; */
   height: 0;
   /* height: 0; */
+}
+input:not(input:checked) + label .elem-img img {
+  height: 0;
 }
 
 @media (min-width: 700px) {
@@ -119,8 +122,8 @@ input:not(input:checked) ~ .elem-img img {
   label:hover {
     cursor: pointer;
   }
-  /* .elem-inner:hover img {
-    height: auto;
-    transition: 0.5s;
-  } */
+  .elem:hover .elem-img img {
+    height: 50vh;
+    transition: 1s;
+  }
 }
