@@ -42,7 +42,7 @@ input {
 }
 
 .elem-img img {
-  width: 50%;
+  width: 70%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -51,7 +51,7 @@ input {
 }
 
 .elem-cross img {
-  height: 1rem;
+  height: 0.8rem;
   transform: rotate(45deg);
   transition: 0.3s;
 }
@@ -62,7 +62,7 @@ input {
   color: blue;
 }
 
-input:checked ~ .elem-inner .elem-title {
+input:checked ~ label .elem-inner .elem-title {
   color: black;
 }
 
@@ -84,6 +84,10 @@ input:not(input:checked) ~ .elem-img img {
 input:not(input:checked) + label .elem-img img {
   width: 0;
 }
+.elem:hover .elem-img img {
+  width: 70%;
+  transition: 0.5s;
+}
 
 @media (min-width: 700px) {
   h1 {
@@ -91,6 +95,13 @@ input:not(input:checked) + label .elem-img img {
   }
   .elem-title {
     font-size: 1.2rem;
+  }
+  .elem-img img {
+    width: 60%;
+  }
+  .elem:hover .elem-img img {
+    width: 60%;
+    transition: 0.5s;
   }
 }
 
@@ -103,6 +114,13 @@ input:not(input:checked) + label .elem-img img {
   }
   .wrapper {
     max-width: 1200px;
+  }
+  .elem-img img {
+    width: 50%;
+  }
+  .elem:hover .elem-img img {
+    width: 50%;
+    transition: 0.5s;
   }
 }
 
@@ -122,12 +140,26 @@ input:not(input:checked) + label .elem-img img {
   label:hover {
     cursor: pointer;
   }
-  .elem:hover .elem-img img {
+
+  /* .elem:hover .elem-img img {
     width: 50%;
     transition: 0.5s;
-  }
+  } */
   .elem:hover .elem-cross {
     transform: rotate(45deg);
     transition: 0.3s;
   }
+}
+
+.elem:active .elem-img img {
+  opacity: 0.5;
+  transition: 0.1s;
+}
+.elem:active .elem-title {
+  color: blue;
+  transition: 0.1s;
+}
+
+.elem:active input:checked ~ label .elem-inner .elem-title {
+  color: blue;
 }
