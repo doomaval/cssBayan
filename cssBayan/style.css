@@ -66,7 +66,7 @@ input:checked ~ .elem-inner .elem-title {
   color: black;
 }
 
-input:checked ~ .elem-inner .elem-cross {
+input:checked ~ .elem-inner .elem-cross img {
   transform: rotate(45deg);
   transition: 0.3s;
 }
@@ -104,7 +104,7 @@ input:not(input:checked) ~ .elem-img img {
 }
 
 @media (hover: hover) {
-  input ~ .elem-inner .elem-cross {
+  .elem-cross {
     display: none;
   }
 
@@ -112,12 +112,15 @@ input:not(input:checked) ~ .elem-img img {
     color: black;
   }
 
+  form:hover .elem-cross {
+    display: inline-block;
+  }
+
   label:hover {
     cursor: pointer;
   }
-
-  .elem-inner:hover img {
+  /* .elem-inner:hover img {
     height: auto;
     transition: 0.5s;
-  }
+  } */
 }
