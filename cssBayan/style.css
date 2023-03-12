@@ -41,7 +41,11 @@ input {
 
 .elem-img img {
   /* width: 50%; */
-  height: 25vh;
+  width: 60vw;
+}
+
+.elem-cross img {
+  height: 1rem;
 }
 
 .elem-title,
