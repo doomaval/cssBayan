@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+}
+
+html {
+  /* font-size: 100%; */
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  width: 80vw;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+label {
+  display: block;
+  border-top: 0.01rem solid grey;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+input {
+  appearance: none;
+  display: none;
+}
+
+.elem-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elem-img {
+  text-align: center;
+  /* margin-top: 0.5rem; */
+}
+
+.elem-img img {
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.elem-cross img {
+  height: 0.8rem;
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+
+.elem-title {
+  flex-grow: 1;
+  font-weight: bold;
+  color: blue;
+}
+
+input:checked ~ label .elem-inner .elem-title {
+  color: black;
+}
+
+input:checked ~ label .elem-inner .elem-cross img {
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.elem-title,
+.elem-cross {
+  display: inline-block;
+}
+
+input:not(input:checked) ~ .elem-img img {
+  /* display: none; */
+  height: 0;
+  /* height: 0; */
+}
+input:not(input:checked) + label .elem-img img {
+  width: 0;
+}
+.elem:hover .elem-img img {
+  width: 70%;
+  transition: 0.5s;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .elem-title {
+    font-size: 1.2rem;
+  }
+  .elem-img img {
+    width: 60%;
+  }
+  .elem:hover .elem-img img {
+    width: 60%;
+    transition: 0.5s;
+  }
+
+  .elem-cross img {
+    height: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .elem-title {
+    font-size: 1.5rem;
+  }
+  .wrapper {
+    max-width: 80rem;
+  }
+  .elem-img img {
+    width: 50%;
+  }
+  .elem:hover .elem-img img {
+    width: 50%;
+    transition: 0.5s;
+  }
+  .elem-cross img {
+    height: 1.2rem;
+  }
+}
+
+@media (hover: hover) {
+  .elem-cross {
+    display: none;
+  }
+
+  form:hover .elem-title {
+    color: black;
+  }
+
+  form:hover .elem-cross {
+    display: inline-block;
+  }
+
+  label:hover {
+    cursor: pointer;
+  }
+
+  /* .elem:hover .elem-img img {
+    width: 50%;
+    transition: 0.5s;
+  } */
+  .elem:hover .elem-cross {
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+}
+
+.elem:active .elem-img img {
+  opacity: 0.5;
+  transition: 0.1s;
+}
+.elem:active .elem-title {
+  color: blue;
+  transition: 0.1s;
+}
+
+.elem:active .elem-cross img {
+  filter: invert(12%) sepia(96%) saturate(4238%) hue-rotate(242deg)
+    brightness(98%) contrast(159%);
+}
+
+.elem:active input:checked ~ label .elem-inner .elem-title {
+  color: blue;
+}
+
+.elem:hover input:checked ~ label .elem-inner .elem-cross {
+  transform: rotate(0deg);
+  transition: 0.3s;
+}
