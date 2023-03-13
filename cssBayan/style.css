@@ -21,7 +21,7 @@ h1 {
 
 label {
   display: block;
-  border-top: 1px solid grey;
+  border-top: 0.01rem solid grey;
   padding: 0.5rem 0 0.5rem 0;
 }
 
@@ -113,7 +113,7 @@ input:not(input:checked) + label .elem-img img {
     font-size: 1.5rem;
   }
   .wrapper {
-    max-width: 1200px;
+    max-width: 80rem;
   }
   .elem-img img {
     width: 50%;
@@ -160,6 +160,16 @@ input:not(input:checked) + label .elem-img img {
   transition: 0.1s;
 }
 
+.elem:active .elem-cross img {
+  filter: invert(12%) sepia(96%) saturate(4238%) hue-rotate(242deg)
+    brightness(98%) contrast(159%);
+}
+
 .elem:active input:checked ~ label .elem-inner .elem-title {
   color: blue;
+}
+
+.elem:hover input:checked ~ label .elem-inner .elem-cross {
+  transform: rotate(0deg);
+  transition: 0.3s;
 }
