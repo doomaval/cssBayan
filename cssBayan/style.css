@@ -103,6 +103,10 @@ input:not(input:checked) + label .elem-img img {
     width: 60%;
     transition: 0.5s;
   }
+
+  .elem-cross img {
+    height: 1rem;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -121,6 +125,9 @@ input:not(input:checked) + label .elem-img img {
   .elem:hover .elem-img img {
     width: 50%;
     transition: 0.5s;
+  }
+  .elem-cross img {
+    height: 1.2rem;
   }
 }
 
